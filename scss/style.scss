@@ -1,0 +1,163 @@
+$pineapple: #ffa700;
+
+body { background-color: #fafcb8; }
+
+.pineapple {
+  font-size: 90vmin;
+  height: 1em;
+  margin: 5vmin auto;
+  width: .9em;
+  position: relative;
+  div { position: absolute; }
+}
+
+.leaf {
+  background-color: darkgreen;
+  border-radius: 90% 0 90% 0;
+  height: 20%;
+  top: 10%;
+  width: 20%;
+  &.left {
+    animation: leafLeft 0.25s ease-in-out alternate infinite;
+    left: 50%;
+    transform-origin: bottom left
+  }
+  &.middle {
+    animation: leafMiddle 0.25s ease-in-out alternate infinite;
+    background-color: green;
+    left: 40%;
+    top: 5%;
+    transform: rotate(-40deg);
+  }
+  &.right {
+    animation: leafRight 0.25s ease-in-out alternate infinite;
+    left: 50%;
+    transform-origin: bottom left
+  }
+}
+
+.body {
+  animation: body 0.25s ease-in-out alternate infinite;
+  background-color: $pineapple;
+  border-radius: 40%;
+  height: 50%;
+  left: 24%;
+  top: 27%;
+  width: 54%;
+  &::after {
+    background: repeating-linear-gradient(-45deg, transparent, transparent 15%, darkorange 15%, darkorange 20%), repeating-linear-gradient(45deg, transparent, transparent 15%, darkorange 15%, darkorange 20%);
+    border-radius: 40%;
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.eye {
+  animation: eye 1.04s infinite;
+  background-color: black;
+  border-radius: 100%;
+  height: 15%;
+  top: 35%;
+  width: 15%;
+  z-index: 2;
+  &.left { left: 25%; }
+  &.right { right: 25%; }
+}
+
+.mouth {
+  background-color: black;
+  border-radius: 20% 20% 80% 80%;
+  height: 12%;
+  left: 41%;
+  top: 50%;
+  width: 18%;
+  z-index: 2;
+}
+
+.arm {
+  background-color: $pineapple;
+  border-radius: 100vw;
+  height: 50%;
+  top: 20%;
+  width: 20%;
+  &.left {
+    animation: armLeft 0.26s ease-in-out alternate infinite;
+    left: 10%;
+    transform-origin: bottom left;
+  }
+  &.right {
+    animation: armRight 0.26s ease-in-out alternate infinite;
+    right: 10%;
+    transform-origin: bottom right;
+  }
+}
+
+.leg {
+  animation: foot 0.26s alternate 0.13s infinite;
+  background: $pineapple;
+  border-radius: 100vw;
+  bottom: -20%;
+  height: 40%;
+  width: 20%;
+  &.left { left: 20%; }
+  &.right { right: 20%; }
+}
+
+.shadow {
+  animation: shadow 0.26s ease alternate infinite;
+  background-color: tan;
+  border-radius: 100%;
+  bottom: 5%;
+  height: 10%;
+  left: 28%;
+  opacity: 0.5;
+  width: 46%;
+}
+
+@keyframes leafLeft {
+  from { transform: rotate(-75deg) }
+  to { transform: rotate(-85deg) }
+}
+
+@keyframes leafMiddle {
+  from { transform: translateY(-10%) rotate(-40deg) }
+  to { transform: translateY(10%) rotate(-40deg) }
+}
+
+@keyframes leafRight {
+  from { transform: rotate(-5deg) }
+  to { transform: rotate(5deg) }
+}
+
+@keyframes armLeft {
+  from { transform: rotate(-40deg) }
+  to { transform: rotate(-50deg) }
+}
+
+@keyframes armRight {
+  from { transform: rotate(40deg) }
+  to { transform: rotate(50deg) }
+}
+
+@keyframes body {
+  from { transform: translateY(-2%) }
+  to { transform: translateY(2%) }
+}
+
+@keyframes eye {
+  100% { transform: rotateX(0deg); }
+  50% { transform: rotateX(180deg); }
+  100% { transform: rotateX(180deg); }
+}
+
+@keyframes foot {
+  from { transform: translateY(-10%) }
+  to { transform: translateY(10%) }
+}
+
+@keyframes shadow {
+  from { transform: scaleX(1.1) }
+  to { transform: scaleX(1) }
+}
