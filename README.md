@@ -82,4 +82,4 @@ You can try out the [DEMO HERE](https://jordanschuetz.github.io/Larry-the-PubNub
 
 ![ChatEngine PubNub Pineapple](https://i.imgur.com/OQIBWt0.png)
 
-Need more help with Larry? Send me a mail at schuetz@pubnub.com.
+Need more help with Larry? Send me a mail at schuetz@pubnub.com. If you liked this demo, please star and fork on github :) 
