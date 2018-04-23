@@ -18,15 +18,6 @@ ChatEngine.on('$.ready', (data) => {
     chat.on('$.connected', (payload) => {
       console.log(me.uuid)
     });
-/*
-    chat.on('$.online.here', (payload) => {
-      appendMessage('Status', payload.user.uuid + ' is in the channel! Their color is ' + payload.user.state.color + '.');
-    });
-
-    chat.on('$.online.join', (payload) => {
-      appendMessage('Status', payload.user.uuid + ' has come online! Their color is ' + payload.user.state.color + '.');
-    });*/
-
 
     chat.on('message', (payload) => {
       console.log(payload.sender.uuid, payload.data.text);
@@ -36,7 +27,7 @@ ChatEngine.on('$.ready', (data) => {
       	txt1.addClass("speech-bubble");
       	txt1.text(payload.data.text);
       	body.append(txt1)
-      	$( "div.speech-bubble" ).fadeOut( 1500);
+      	$( "div.speech-bubble" ).fadeOut(5000);
       	//$("body").append(txt1);
       }
       appendText();
@@ -50,13 +41,15 @@ ChatEngine.on('$.ready', (data) => {
         });
 	        textInput.value = '';
 	        return false;
+          //document.getElementById("mouth").style.WebkitAnimationPlayState = "paused";
     	}
     };
     checkSubmit = function(e) {
         if (e.keyCode == 13) {
             sendChat();
             console.log("hi")
+            $(this).addClass("mouth")
+            //document.getElementById("mouth").style.WebkitAnimationPlayState = "running";
         }
     }
-
 });
