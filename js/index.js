@@ -1,6 +1,6 @@
 let ChatEngine = ChatEngineCore.create({
-    publishKey: 'pub-c-497650cc-ca13-4cea-b453-df29a7e68941',
-    subscribeKey: 'sub-c-8ebc94c4-fa2c-11e7-b8a6-46d99af2bb8c',
+    publishKey: 'pub-c-08366b99-e753-481d-9375-502cf32998d8',
+    subscribeKey: 'sub-c-fd076d64-2587-11e9-9836-922834e26a5b',
 });
 
 
